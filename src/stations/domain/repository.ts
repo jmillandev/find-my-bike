@@ -1,9 +1,9 @@
-import { Station } from './entiry';
+import { Station } from './entity';
 import { StationCoordinates } from './value_objects/coordinates';
 import { StationDistance } from './value_objects/distance';
 
 export interface StationRepository {
-  findNearbyStations(
+  findNearby(
     coordinates: StationCoordinates,
     distance: StationDistance,
   ): Promise<Station[]>;

@@ -1,4 +1,4 @@
-import { Station } from '../domain/entiry';
+import { Station } from '../domain/entity';
 import { StationRepository } from '../domain/repository';
 import { StationCoordinates } from '../domain/value_objects/coordinates';
 import { StationDistance } from '../domain/value_objects/distance';
@@ -7,9 +7,12 @@ export class StationFinder {
   constructor(private readonly stationRepository: StationRepository) {}
 
   async call(
-    coordinates: StationCoordinates,
-    distance: StationDistance,
+    latitude: number,
+    longitude: number,
+    distance: number,
   ): Promise<Station[]> {
-    return this.stationRepository.findNearbyStations(coordinates, distance);
+    const coordinates = new StationCoordinates({ latitude, longitude });
+    const distanceVO = new StationDistance(distance);
+    return this.stationRepository.findNearby(coordinates, distanceVO);
   }
 }
