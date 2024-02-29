@@ -1,73 +1,37 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<h1 align="center">🚲🗺 FindMyBike</h1>
 
 ## Description
+A simple API to find the nearest [MiBici](https://www.mibici.net/es) bike station from a given location.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🙌 Environment Setup
 
-## Installation
+### 🐳 Needed tools
 
-```bash
-$ npm install
-```
+1. [Nodejs(v20.11.1)](https://nodejs.org/en)
+2. [Makefile](https://www.gnu.org/software/make/manual/make.html)
 
-## Running the app
+### 🛠️ Environment configuration
 
-```bash
-# development
-$ npm run start
+### 🔥 Application execution
 
-# watch mode
-$ npm run start:dev
+1. Install all the dependencies and bring up the project with Docker executing: `make install`
 
-# production mode
-$ npm run start:prod
-```
+### ✅ Tests execution
 
-## Test
+1. Install the dependencies if you haven't done it previously: `make install`
+2. Execute tests: `make test`
 
-```bash
-# unit tests
-$ npm run test
+### 📝 API Docs
 
-# e2e tests
-$ npm run test:e2e
+1. Run Server: `make dev/start`
+2. Go to website: `http://localhost:3000/docs`
 
-# test coverage
-$ npm run test:cov
-```
+## 👩‍🏫 Project explanation
 
-## Support
+## Utils
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## External Links
 
-## Stay in touch
+### Technologies(Infrastructure)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
