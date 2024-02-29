@@ -3,7 +3,7 @@ import { StationRepositoryMock } from '../__mocks__/repository';
 import { Station } from '../../../../src/stations/domain/entity';
 import {
   StationStatus,
-  Statuses,
+  StationStatuses,
 } from '../../../../src/stations/domain/value_objects/status';
 import { StationName } from '../../../../src/stations/domain/value_objects/name';
 import { StationCoordinates } from '../../../../src/stations/domain/value_objects/coordinates';
@@ -33,13 +33,13 @@ describe('CreatorService', () => {
       new Station(
         new StationName('Station 1'),
         new StationCoordinates({ latitude: 40.416775, longitude: -3.70379 }),
-        new StationStatus(Statuses.ACTIVE),
+        new StationStatus(StationStatuses.ACTIVE),
         new StationLocation('Madrid'),
       ),
       new Station(
         new StationName('Station 2'),
         new StationCoordinates({ latitude: 41.416775, longitude: -6.70379 }),
-        new StationStatus(Statuses.ACTIVE),
+        new StationStatus(StationStatuses.ACTIVE),
         new StationLocation('Madrid'),
       ),
     ];

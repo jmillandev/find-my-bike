@@ -1,6 +1,6 @@
 import { InvalidArgument } from '../../../shared/domain/errors/invalid_argument';
 
-export enum Statuses {
+export enum StationStatuses {
   ACTIVE = 'IN_SERVICE',
   INACTIVE = 'NOT_IN_SERVICE',
 }
@@ -11,7 +11,7 @@ export class StationStatus {
 
   constructor(value: string) {
     this.value = value;
-    this.validValues = Object.values(Statuses);
+    this.validValues = Object.values(StationStatuses);
     this.checkValueIsValid(value);
   }
 

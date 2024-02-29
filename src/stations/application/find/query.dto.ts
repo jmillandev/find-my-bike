@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { IsInt, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class FindStationQuery {
@@ -11,5 +12,6 @@ export class FindStationQuery {
 
   @IsNotEmpty()
   @IsInt()
+  @ApiProperty({ description: 'Distance in meters' })
   distance: number;
 }

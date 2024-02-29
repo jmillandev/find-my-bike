@@ -6,7 +6,7 @@ import { StationLocation } from '../../../../../src/stations/domain/value_object
 import { StationName } from '../../../../../src/stations/domain/value_objects/name';
 import {
   StationStatus,
-  Statuses,
+  StationStatuses,
 } from '../../../../../src/stations/domain/value_objects/status';
 import { CsvStationRepository } from '../../../../../src/stations/infrastructure/repositories/csv';
 
@@ -35,7 +35,7 @@ describe('CsvStationRepository', () => {
     const expected_station = new Station(
       new StationName('(GDL-002) C. Colonias  / Av.  Ni�os h�roes'),
       new StationCoordinates({ latitude: 20.667228, longitude: -103.366 }),
-      new StationStatus(Statuses.ACTIVE),
+      new StationStatus(StationStatuses.ACTIVE),
       new StationLocation('POL�GONO CENTRAL'),
     );
     const coordinates = new StationCoordinates({
