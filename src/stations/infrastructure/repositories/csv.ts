@@ -5,11 +5,11 @@ import { StationCoordinates } from '../../domain/value_objects/coordinates';
 import { StationDistance } from '../../domain/value_objects/distance';
 import { jsonToStation } from './mapper';
 import * as csvParser from 'csv-parser';
+import { Inject, Injectable } from '@nestjs/common';
 
+@Injectable()
 export class CsvStationRepository implements StationRepository {
-  private readonly csv: string;
-
-  constructor(private stations: Array<Station>) {}
+  constructor(@Inject('CSV_STATIONS') private stations: Array<Station>) {}
 
   async findNearby(
     coordinates: StationCoordinates,
@@ -17,7 +17,7 @@ export class CsvStationRepository implements StationRepository {
   ): Promise<Station[]> {
     // For another repository we could use a database query instead calculating the distance manually
     return this.stations.filter((station) => {
-      return distance.gt(station.coordinates.distance(coordinates));
+      return distance.gte(station.coordinates.distance(coordinates));
     });
   }
 

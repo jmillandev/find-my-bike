@@ -8,3 +8,5 @@ export interface StationRepository {
     distance: StationDistance,
   ): Promise<Station[]>;
 }
+
+export const StationRepository = Symbol('StationRepository');

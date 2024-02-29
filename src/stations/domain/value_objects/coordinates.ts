@@ -33,6 +33,14 @@ export class StationCoordinates extends ValueObject<Coordinates> {
     }
   }
 
+  latitude(): number {
+    return this.value.latitude;
+  }
+
+  longitude(): number {
+    return this.value.longitude;
+  }
+
   distance(coordinates: StationCoordinates): StationDistance {
     // Base on Haversine formula
     // TODO: Add tests cases

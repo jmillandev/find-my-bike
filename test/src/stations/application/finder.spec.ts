@@ -1,4 +1,4 @@
-import { StationFinder } from '../../../../src/stations/application/finder';
+import { StationFinder } from '../../../../src/stations/application/find/finder';
 import { StationRepositoryMock } from '../__mocks__/repository';
 import { Station } from '../../../../src/stations/domain/entity';
 import {
