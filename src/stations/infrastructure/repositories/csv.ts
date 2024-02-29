@@ -17,6 +17,7 @@ export class CsvStationRepository implements StationRepository {
     coordinates: StationCoordinates,
     distance: StationDistance,
   ): Promise<Station[]> {
+    // For another repository we could use a database query instead calculating the distance manually
     return this.stations.filter((station) => {
       return station.coordinates.distance(coordinates) < distance;
     });
