@@ -4,8 +4,10 @@ import { StationName } from './value_objects/name';
 import { StationStatus } from './value_objects/status';
 
 export class Station {
-  name: StationName;
-  coordinates: StationCoordinates;
-  status: StationStatus;
-  location: StationLocation;
+  constructor(
+    public name: StationName,
+    public coordinates: StationCoordinates,
+    public status: StationStatus,
+    public location: StationLocation,
+  ) {}
 }

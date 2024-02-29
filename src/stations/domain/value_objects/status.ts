@@ -1,6 +1,6 @@
-import { InvalidArgumentError } from '../../../shared/domain/errors/invalid_argument';
+import { InvalidArgument } from '../../../shared/domain/errors/invalid_argument';
 
-enum Statuses {
+export enum Statuses {
   ACTIVE = 'IN_SERVICE',
   INACTIVE = 'NOT_IN_SERVICE',
 }
@@ -17,7 +17,7 @@ export class StationStatus {
 
   checkValueIsValid(value: string): void {
     if (!this.validValues.includes(value)) {
-      throw new InvalidArgumentError(
+      throw new InvalidArgument(
         `${value} is a invalid <${this.constructor.name}>`,
       );
     }
