@@ -14,15 +14,17 @@ describe('CsvStationRepository', () => {
   let repository: StationRepository;
 
   beforeEach(async () => {
-    repository = new CsvStationRepository('./storage/mibici_2024_01.csv');
+    const products = await CsvStationRepository.parseCsv(
+      './storage/mibici_2024_01.csv',
+    );
+    repository = new CsvStationRepository(products);
   });
 
   it('should return an empty list of stations', async () => {
-    const coors = {
+    const coordinates = new StationCoordinates({
       latitude: 10.5082346,
       longitude: -66.9218495,
-    };
-    const coordinates = new StationCoordinates(coors);
+    });
     const distance = new StationDistance(1000);
     const stations = await repository.findNearby(coordinates, distance);
 
@@ -44,6 +46,6 @@ describe('CsvStationRepository', () => {
     const distance = new StationDistance(1800);
     const stations = await repository.findNearby(coordinates, distance);
 
-    expect(stations).toContain(expected_station);
+    expect(stations).toContainEqual(expected_station);
   });
 });

@@ -49,6 +49,6 @@ export class StationCoordinates extends ValueObject<Coordinates> {
       Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(deltaLong / 2), 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    return new StationDistance(earthRadius * c);
+    return new StationDistance(Math.round(earthRadius * c));
   }
 }

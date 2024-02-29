@@ -1,8 +1,8 @@
-import { StationCoordinates } from 'src/stations/domain/value_objects/coordinates';
-import { Station } from 'src/stations/domain/entity';
-import { StationName } from 'src/stations/domain/value_objects/name';
-import { StationStatus } from 'src/stations/domain/value_objects/status';
-import { StationLocation } from 'src/stations/domain/value_objects/location';
+import { StationCoordinates } from '../../domain/value_objects/coordinates';
+import { Station } from '../../domain/entity';
+import { StationName } from '../../domain/value_objects/name';
+import { StationStatus } from '../../domain/value_objects/status';
+import { StationLocation } from '../../domain/value_objects/location';
 
 interface StationJson {
   name: string;

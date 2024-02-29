@@ -1,17 +1,15 @@
-import { StationCoordinates } from 'src/stations/domain/value_objects/coordinates';
+import { createReadStream } from 'fs';
+import { Station } from '../../domain/entity';
 import { StationRepository } from '../../domain/repository';
-import { StationDistance } from 'src/stations/domain/value_objects/distance';
-import { Station } from 'src/stations/domain/entity';
+import { StationCoordinates } from '../../domain/value_objects/coordinates';
+import { StationDistance } from '../../domain/value_objects/distance';
 import { jsonToStation } from './mapper';
+import * as csvParser from 'csv-parser';
 
 export class CsvStationRepository implements StationRepository {
   private readonly csv: string;
-  private stations: Array<Station> = [];
 
-  constructor(csv: string) {
-    this.csv = csv;
-    this.stations = this.parseCsv(csv);
-  }
+  constructor(private stations: Array<Station>) {}
 
   async findNearby(
     coordinates: StationCoordinates,
@@ -19,24 +17,20 @@ export class CsvStationRepository implements StationRepository {
   ): Promise<Station[]> {
     // For another repository we could use a database query instead calculating the distance manually
     return this.stations.filter((station) => {
-      return station.coordinates.distance(coordinates) < distance;
+      return distance.gt(station.coordinates.distance(coordinates));
     });
   }
 
-  private parseCsv(csv: string): Array<Station> {
-    const lines = csv.split('\n');
-    const stations = lines.map((line) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const [id, name, obcn, location, latitude, longitude, status] =
-        line.split(',');
-      return jsonToStation({
-        name,
-        latitude: parseFloat(latitude),
-        longitude: parseFloat(longitude),
-        status,
-        location,
-      });
+  static parseCsv(file_name: string): Promise<Array<Station>> {
+    return new Promise((resolve, reject) => {
+      const stations = [];
+      createReadStream(file_name)
+        .pipe(csvParser())
+        .on('data', (product_data) =>
+          stations.push(jsonToStation(product_data)),
+        )
+        .on('end', () => resolve(stations))
+        .on('error', (error) => reject(error));
     });
-    return stations;
   }
 }

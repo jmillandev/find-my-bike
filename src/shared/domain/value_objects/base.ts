@@ -22,4 +22,11 @@ export abstract class ValueObject<T> {
       other.value === this.value
     );
   }
+
+  gt(other: ValueObject<T>): boolean {
+    return (
+      other.constructor.name === this.constructor.name &&
+      this.value > other.value
+    );
+  }
 }
