@@ -43,7 +43,7 @@ export class StationCoordinates extends ValueObject<Coordinates> {
 
   distance(coordinates: StationCoordinates): StationDistance {
     // Base on Haversine formula
-    // TODO: Add tests cases
+    // If we can we could use https://github.com/manuelbieh/geolib instead this solution
     const earthRadius = 6371e3; // metres
     const lat1 = (this.value.latitude * Math.PI) / 180; // φ, λ in radians
     const lat2 = (coordinates.value.latitude * Math.PI) / 180;
