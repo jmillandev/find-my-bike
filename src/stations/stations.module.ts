@@ -17,7 +17,7 @@ import { join } from 'path';
       provide: 'CSV_STATIONS',
       useFactory: async () => {
         return CsvStationRepository.parseCsv(
-          join(__dirname, '..', '..', 'storage', 'mibici_2024_01.csv'),
+          join(__dirname, '..', 'storage', 'mibici_2024_01.csv'),
         );
       },
     },

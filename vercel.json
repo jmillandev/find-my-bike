@@ -6,7 +6,6 @@
       "use": "@vercel/node"
     }
   ],
-  "files": ["dist", "api", "public", "storage/mibici_2024_01.csv"],
   "routes": [
     {
       "src": "/(.*)",
