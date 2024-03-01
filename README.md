@@ -1,5 +1,9 @@
 <h1 align="center">🚲🗺 FindMyBike</h1>
 
+## Live Server
+
+Hosted on [Vercel](https://find-my-bike-nine.vercel.app/docs)
+
 ## Description
 A simple API to find the nearest [MiBici](https://www.mibici.net/es) bike station from a given location.
 
