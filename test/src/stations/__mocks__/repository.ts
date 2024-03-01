@@ -1,7 +1,7 @@
-import { Station } from "src/stations/domain/entity";
-import { StationRepository } from "src/stations/domain/repository";
-import { StationCoordinates } from "src/stations/domain/value_objects/coordinates";
-import { StationDistance } from "src/stations/domain/value_objects/distance";
+import { Station } from 'src/stations/domain/entity';
+import { StationRepository } from 'src/stations/domain/repository';
+import { StationCoordinates } from 'src/stations/domain/value_objects/coordinates';
+import { StationDistance } from 'src/stations/domain/value_objects/distance';
 
 export class StationRepositoryMock implements StationRepository {
   private findNearbyMock: jest.Mock;

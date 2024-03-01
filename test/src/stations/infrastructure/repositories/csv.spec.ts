@@ -15,7 +15,7 @@ describe('CsvStationRepository', () => {
 
   beforeEach(async () => {
     const products = await CsvStationRepository.parseCsv(
-      './storage/mibici_2024_01.csv',
+      './src/storage/mibici_2024_01.csv',
     );
     repository = new CsvStationRepository(products);
   });
